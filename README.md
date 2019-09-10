@@ -1,5 +1,5 @@
 # Sistemas Operativos de AMR
-Sistemas operativos que utilizará la empresa. Materia Sistemas Operativos.
+Sistemas operativos que utilizará la empresa. Materia Sistemas Operativos II.
 
 ## Requerimientos de Sistemas Operativos
 
