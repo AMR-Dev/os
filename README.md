@@ -1,4 +1,4 @@
-# Sistemas Operativos de AMR
+# Sistemas Operativos y ShellScript de DesignBosco
 Sistemas operativos que utilizará la empresa. Materia Sistemas Operativos II.
 
 ## Requerimientos de Sistemas Operativos
