@@ -11,7 +11,15 @@ clear
 read -p "Ingrese el nombre completo del empleado: " nomApe
 
 clear
-read -p "Ingrese la cedula de identidad del empleado: " ci
+buscEmpl="."
+while [ "$buscEmpl" != "" -o "$ci" == "" ]; do
+    read -p "Ingrese la cedula de identidad del empleado: " ci
+    buscEmpl=`grep "$ci" listaEmpleados.txt`
+    if [ "$buscEmpl" != "" -o "$ci" == "" ];then
+        clear
+        echo "La cedula coincide con la cedula de otro empleado."
+    fi
+done
 
 clear
 read -p "Ingrese el cargo del empleado: " cargo

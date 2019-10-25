@@ -11,10 +11,10 @@ buscProy="."
 
 clear
 
-while [ $buscProy != "" ]; do
+while [ "$buscProy" != "" ]; do
     read -p "Ingrese nombre del proyecto (no puede ser igual al nombre de otros proyectos): " nombre
     buscProy=`grep "$nombre" listaProyectos.txt`
-    if [ $buscProy != "" ];then
+    if [ "$buscProy" != "" ];then
         clear
         echo "El nombre del proyecto coincide con el nombre de otro proyecto."
     fi

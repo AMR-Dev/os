@@ -2,14 +2,15 @@
 
 # Este es el scipt del menu de proyectos
 option=0
-while [ "$option" != "7" ];do
+while [ "$option" != "8" ];do
     echo "1. Mostrar todos los proyectos."
     echo "2. Mostrar proyecto"
     echo "3. Añadir proyecto"
     echo "4. Asignar empleado a proyecto"
-    echo "5. Eliminar proyecto"
-    echo "6. Modificar proyecto"
-    echo "7. Salir"
+    echo "5. Desasignar empleado a proyecto"
+    echo "6. Eliminar proyecto"
+    echo "7. Modificar proyecto"
+    echo "8. Salir"
     read -p "Elegir opcion: " option # Pide la opcion
     case $option in # Aqui la evalua
         1)
@@ -28,14 +29,18 @@ while [ "$option" != "7" ];do
             ./scriptAsignarEmpleadoMenu.sh
             ;;
         5)
+        clear
+        ./scriptDesAsignarEmpleadoMenu.sh
+        ;;
+        6)
             clear
             ./scriptEliminarProyecto.sh
             ;;
-        6)
+        7)
             clear
             ./scriptModificarProyecto.sh
             ;;
-        7)
+        8)
             clear
             ;;
         *)

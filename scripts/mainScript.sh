@@ -11,10 +11,13 @@ if [ "$1" = "--help" ]; then
     echo -e "\t\t\tAsignar empleados a los proyectos."
     echo -e "\t\t\tMostrar la lista de todos los empleados."
     echo -e "\t\t\tMostrar la lista de todos los proyetos."
+    echo -e "\nConsideraciones: "
+    echo -e "\t\t\tSi desea modificar o eliminar un empleado, debe desasignarlo a los proyectos primero para evitar conflictos."
 else
     # Aqui empieza nuestro programa
     clear
     echo "Bienvenido."
+    chmod -x script*.sh
     touch listaProyectos.txt
     touch listaEmpleados.txt
     option="0"

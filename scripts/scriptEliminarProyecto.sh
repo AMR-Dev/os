@@ -6,7 +6,7 @@ cantLineas=`cat listaProyectos.txt | wc -l`
 declare -i linea=-1
 
 while [ $linea -gt $cantLineas -o $linea -lt 0 ]; do
-        read -p "Escriba el numero de linea del proyecto a mostrar (0 para cancelar): " linea
+        read -p "Escriba el numero de linea del proyecto a eliminar (0 para cancelar): " linea
         if [ $linea -gt $cantLineas -o $linea -lt 0 ]; then
                 clear
                 echo "Numero de linea incorrecto."
