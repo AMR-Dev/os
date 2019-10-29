@@ -42,8 +42,8 @@ if [ $lineaEmpleado -ne 0 ]; then
                                 infoProy="proyecto$nombreProy/info.txt"
                                 empleadoProy="proyecto$nombreProy/empleados.txt"
                                 echo "$empleado" >> "$empleadoProy"
-                                echo -e "`head -3 $infoProy`\n`cat $empleadoProy | wc -l`\n`tail -1 $infoProy`" > "proyecto$nombreProy/aux.txt"
-                                mv "proyecto$nombreProy/aux.txt" "$infoProy"
+                                # echo -e "`head -3 $infoProy`\n`cat $empleadoProy | wc -l`\n`tail -1 $infoProy`" > "proyecto$nombreProy/aux.txt"
+                                # mv "proyecto$nombreProy/aux.txt" "$infoProy"
                         fi
                 fi
         fi

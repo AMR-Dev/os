@@ -20,7 +20,7 @@ if [ $linea -ne 0 ]; then
         echo "Nombre del proyecto:" `head -1 "proyecto$nombre/info.txt" | tail -1`
         echo "Fecha inicial:" `head -2 "proyecto$nombre/info.txt" | tail -1`
         echo "Fecha final:" `head -3 "proyecto$nombre/info.txt" | tail -1`
-        echo "Cantidad de empleados:" `head -4 "proyecto$nombre/info.txt" | tail -1`
+        echo "Cantidad de empleados:" `cat "proyecto$nombre/empleados.txt" | wc -l`
         echo "Estado:" `head -5 "proyecto$nombre/info.txt" | tail -1`
 
         read -p "Aplasta enter para continuar"

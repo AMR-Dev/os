@@ -32,7 +32,13 @@ if [ $lineaProyecto -ne 0 ]; then
         if [ $lineaEmpleado -ne 0 ]; then
                 lineasEmpleado=$lineasEmpleado-$lineaEmpleado
                 lineaEmpleado=$lineaEmpleado-1
-                echo "`head -$lineaEmpleado "proyecto$nombreProyecto/empleados.txt"``tail -$lineasEmpleado "proyecto$nombreProyecto/empleados.txt"`" > "proyecto$nombreProyecto/aux.txt"
+                if [ $linea -eq 0 ]; then
+                        echo "`tail -$lineasEmpleado "proyecto$nombreProyecto/empleados.txt"`" > "proyecto$nombreProyecto/aux.txt"
+                elif [ $lineas -eq 0 ]; then
+                        echo "`head -$lineaEmpleado "proyecto$nombreProyecto/empleados.txt"`" > "proyecto$nombreProyecto/aux.txt"
+                else
+                        echo -e "`head -$lineaEmpleado "proyecto$nombreProyecto/empleados.txt"`\n`tail -$lineasEmpleado "proyecto$nombreProyecto/empleados.txt"`" > "proyecto$nombreProyecto/aux.txt"
+                fi
                 mv "proyecto$nombreProyecto/aux.txt" "proyecto$nombreProyecto/empleados.txt"
         fi
 

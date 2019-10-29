@@ -27,7 +27,13 @@ else
                 declare -i lineas=`cat listaProyectos.txt | wc -l`
                 lineas=$lineas-$linea
                 linea=$linea-1
-                echo "`head -$linea listaProyectos.txt``tail -$lineas listaProyectos.txt`" > aux.txt
+                if [ $linea -eq 0 ]; then
+                        echo "`tail -$lineas listaProyectos.txt`" > aux.txt
+                elif [ $lineas -eq 0 ]; then
+                        echo "`head -$linea listaProyectos.txt`" > aux.txt
+                else
+                        echo -e "`head -$linea listaProyectos.txt`\n`tail -$lineas listaProyectos.txt`" > aux.txt
+                fi
                 mv aux.txt listaProyectos.txt
         fi
         clear

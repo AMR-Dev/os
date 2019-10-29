@@ -75,7 +75,13 @@ else
         if [ $option == "si" -o $option == "Si" ]; then
                 lineas=$lineas-$linea
                 linea=$linea-1
-                echo -e "`head -$linea listaProyectos.txt`$nombreNuevo\n`tail -$lineas listaProyectos.txt`" > aux.txt
+                if [ $linea -eq 0 ]; then
+                        echo -e "$nombreNuevo\n`tail -$lineas listaProyectos.txt`" > aux.txt
+                elif [ $lineas -eq 0 ]; then
+                        echo -e "`head -$linea listaProyectos.txt`$nombreNuevo\n" > aux.txt
+                else
+                        echo -e "`head -$linea listaProyectos.txt`\n$nombreNuevo\n`tail -$lineas listaProyectos.txt`" > aux.txt
+                fi
                 mv aux.txt listaProyectos.txt
                 echo -e "$nombreNuevo\n$fechaInicial\n$fechaFinal\n0\n$estado" > "proyecto$nombre/info.txt"
                 mv "proyecto$nombre" "proyecto$nombreNuevo"

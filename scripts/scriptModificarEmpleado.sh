@@ -67,7 +67,13 @@ else
                 declare -i lineas=`cat listaEmpleados.txt | wc -l`
                 lineas=$lineas-$linea
                 linea=$linea-1
-                echo -e "`head -$linea listaEmpleados.txt`\n$nuevoEmpleado`tail -$lineas listaEmpleados.txt`" > aux.txt
+                if [ $linea -eq 0 ]; then
+                        echo -e "$nuevoEmpleado\n`tail -$lineas listaEmpleados.txt`" > aux.txt
+                elif [ $lineas -eq 0 ]; then
+                        echo -e "`head -$linea listaEmpleados.txt`\n$nuevoEmpleado" > aux.txt
+                else
+                        echo -e "`head -$linea listaEmpleados.txt`\n$nuevoEmpleado\n`tail -$lineas listaEmpleados.txt`" > aux.txt
+                fi
                 mv aux.txt listaEmpleados.txt
         fi
         
